@@ -21,7 +21,7 @@ struct ContentView: View {
             List {
                 Section {
                     NavigationLink {
-                        
+                        BookmarksView()
                     } label: {
                         Label("Bookmarks", systemImage: "star")
                     }
@@ -34,16 +34,9 @@ struct ContentView: View {
                     Text("Browser")
                 }
                 Section{
-                    NavigationLink {
-                        
-                    } label: {
-                        Label("X", systemImage: "globe")
-                    }
-                    NavigationLink {
-                        
-                    } label: {
-                        Label("Google", systemImage: "globe")
-                    }
+                    TabItem()
+                    TabItem()
+                    TabItem()
                 } header: {
                     Text("Tabs")
                 }
@@ -57,8 +50,35 @@ struct ContentView: View {
         .sheet(isPresented: $showingPopover) {
             NavigationView {
                 Text("Hello")
-                    .navigationTitle("Vault")
+                .navigationTitle("Vault")
+                .toolbar {
+                                ToolbarItem {
+                                    Button {
+                                    } label: {
+                                        Image(systemName: "plus")
+                                    }
+                                }
+                                ToolbarItem {
+                                    Button {
+                                    } label: {
+                                        Image(systemName: "globe")
+                                    }
+                                }
+                            }
+            }
         }
+    }
+}
+
+struct TabItem: View {
+    var body: some View {
+        Label("Google", systemImage: "globe")
+            .swipeActions {
+                Button("Archive") {
+                    print("Awesome!")
+                }
+                .tint(.yellow)
+            }
     }
 }
 

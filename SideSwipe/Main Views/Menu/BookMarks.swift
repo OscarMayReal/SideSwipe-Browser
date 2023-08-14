@@ -3,40 +3,29 @@ import SwiftUI
 struct BookmarksView: View {
     @State private var searchText = ""
     var body: some View {
-        NavigationView{
-            List {
-                Section {
-                    NavigationLink {
-                        
-                    } label: {
-                        Label("Bookmarks", systemImage: "star")
-                    }
-                    NavigationLink {
-                        
-                    } label: {
-                        Label("history", systemImage: "clock")
-                    }
-                } header: {
-                    Text("Browser")
-                }
-                Section{
-                    NavigationLink {
-                        
-                    } label: {
-                        Label("X", systemImage: "globe")
-                    }
-                    NavigationLink {
-                        
-                    } label: {
-                        Label("Google", systemImage: "globe")
-                    }
-                } header: {
-                    Text("Tabs")
-                }
+        List{
+            NavigationLink {
+                BookmarksView()
+            } label: {
+                Label("X", systemImage: "globe")
             }
-            .navigationTitle("SideSwipe")
-            .searchable(text: $searchText, prompt: "Search The Web")
         }
+        .navigationTitle("Bookmarks")
+        .searchable(text: $searchText, prompt: "Search Bookmarks")
+        .toolbar {
+                        ToolbarItem {
+                            Button {
+                            } label: {
+                                Text("Edit")
+                            }
+                        }
+                        ToolbarItem {
+                            Button {
+                            } label: {
+                                Image(systemName: "plus")
+                            }
+                        }
+                    }
     }
 }
 
