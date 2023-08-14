@@ -1,21 +1,7 @@
-//
-//  ContentView.swift
-//  SideSwipe
-//
-//  Created by oscar may on 14/08/2023.
-//
-
 import SwiftUI
 
-struct tab: Identifiable{
-    var name: String
-    var url: URL
-    var id = UUID()
-}
-
-struct ContentView: View {
+struct BookmarksView: View {
     @State private var searchText = ""
-    @State private var showingPopover = false
     var body: some View {
         NavigationView{
             List {
@@ -50,20 +36,12 @@ struct ContentView: View {
             }
             .navigationTitle("SideSwipe")
             .searchable(text: $searchText, prompt: "Search The Web")
-            .refreshable {
-                showingPopover = true
-            }
-        }
-        .sheet(isPresented: $showingPopover) {
-            NavigationView {
-                Text("Hello")
-                    .navigationTitle("Vault")
         }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct Bookmarks_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        BookmarksView()
     }
 }

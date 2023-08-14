@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8DEF78012A8A253A0064C653 /* BookMarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEF78002A8A253A0064C653 /* BookMarks.swift */; };
 		8DFB2A5B2A8A17AC000910B7 /* SideSwipeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFB2A5A2A8A17AC000910B7 /* SideSwipeApp.swift */; };
 		8DFB2A5D2A8A17AC000910B7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFB2A5C2A8A17AC000910B7 /* ContentView.swift */; };
 		8DFB2A5F2A8A17AE000910B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DFB2A5E2A8A17AE000910B7 /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8DEF78002A8A253A0064C653 /* BookMarks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMarks.swift; sourceTree = "<group>"; };
 		8DFB2A572A8A17AC000910B7 /* SideSwipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SideSwipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DFB2A5A2A8A17AC000910B7 /* SideSwipeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideSwipeApp.swift; sourceTree = "<group>"; };
 		8DFB2A5C2A8A17AC000910B7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -72,6 +74,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8DEF77FE2A8A248D0064C653 /* Main Views */ = {
+			isa = PBXGroup;
+			children = (
+				8DEF77FF2A8A249B0064C653 /* Menu */,
+			);
+			path = "Main Views";
+			sourceTree = "<group>";
+		};
+		8DEF77FF2A8A249B0064C653 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				8DEF78002A8A253A0064C653 /* BookMarks.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
 		8DFB2A4E2A8A17AC000910B7 = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +113,7 @@
 		8DFB2A592A8A17AC000910B7 /* SideSwipe */ = {
 			isa = PBXGroup;
 			children = (
+				8DEF77FE2A8A248D0064C653 /* Main Views */,
 				8DFB2A5A2A8A17AC000910B7 /* SideSwipeApp.swift */,
 				8DFB2A5C2A8A17AC000910B7 /* ContentView.swift */,
 				8DFB2A5E2A8A17AE000910B7 /* Assets.xcassets */,
@@ -260,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DFB2A5D2A8A17AC000910B7 /* ContentView.swift in Sources */,
+				8DEF78012A8A253A0064C653 /* BookMarks.swift in Sources */,
 				8DFB2A5B2A8A17AC000910B7 /* SideSwipeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
