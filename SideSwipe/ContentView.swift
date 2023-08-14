@@ -72,13 +72,17 @@ struct ContentView: View {
 
 struct TabItem: View {
     var body: some View {
-        Label("Google", systemImage: "globe")
-            .swipeActions {
-                Button("Archive") {
-                    print("Awesome!")
-                }
-                .tint(.yellow)
+        NavigationLink {
+            
+        } label: {
+            Label("Google", systemImage: "globe")
+        }
+        .swipeActions {
+            Button("Archive") {
+                print("Awesome!")
             }
+            .tint(.yellow)
+        }
     }
 }
 
