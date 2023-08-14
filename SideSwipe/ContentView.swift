@@ -8,14 +8,42 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var searchText = ""
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationView{
+            List {
+                Section {
+                    NavigationLink {
+                        
+                    } label: {
+                        Label("Bookmarks", systemImage: "star")
+                    }
+                    NavigationLink {
+                        
+                    } label: {
+                        Label("history", systemImage: "clock")
+                    }
+                } header: {
+                    Text("Browser")
+                }
+                Section{
+                    NavigationLink {
+                        
+                    } label: {
+                        Label("X", systemImage: "globe")
+                    }
+                    NavigationLink {
+                        
+                    } label: {
+                        Label("Google", systemImage: "globe")
+                    }
+                } header: {
+                    Text("Tabs")
+                }
+            }
+            .navigationTitle("SideSwipe")
+            .searchable(text: $searchText)
         }
-        .padding()
     }
 }
 
