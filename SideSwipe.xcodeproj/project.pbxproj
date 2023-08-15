@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8DEF78012A8A253A0064C653 /* BookMarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEF78002A8A253A0064C653 /* BookMarks.swift */; };
+		8DEF78032A8AD7CE0064C653 /* BrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEF78022A8AD7CE0064C653 /* BrowserView.swift */; };
+		8DEF78062A8B59F30064C653 /* WebView in Frameworks */ = {isa = PBXBuildFile; productRef = 8DEF78052A8B59F30064C653 /* WebView */; };
 		8DFB2A5B2A8A17AC000910B7 /* SideSwipeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFB2A5A2A8A17AC000910B7 /* SideSwipeApp.swift */; };
 		8DFB2A5D2A8A17AC000910B7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFB2A5C2A8A17AC000910B7 /* ContentView.swift */; };
 		8DFB2A5F2A8A17AE000910B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DFB2A5E2A8A17AE000910B7 /* Assets.xcassets */; };
@@ -36,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		8DEF78002A8A253A0064C653 /* BookMarks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMarks.swift; sourceTree = "<group>"; };
+		8DEF78022A8AD7CE0064C653 /* BrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserView.swift; sourceTree = "<group>"; };
 		8DFB2A572A8A17AC000910B7 /* SideSwipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SideSwipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DFB2A5A2A8A17AC000910B7 /* SideSwipeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideSwipeApp.swift; sourceTree = "<group>"; };
 		8DFB2A5C2A8A17AC000910B7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DEF78062A8B59F30064C653 /* WebView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				8DEF77FF2A8A249B0064C653 /* Menu */,
+				8DEF78022A8AD7CE0064C653 /* BrowserView.swift */,
 			);
 			path = "Main Views";
 			sourceTree = "<group>";
@@ -164,6 +169,9 @@
 			dependencies = (
 			);
 			name = SideSwipe;
+			packageProductDependencies = (
+				8DEF78052A8B59F30064C653 /* WebView */,
+			);
 			productName = SideSwipe;
 			productReference = 8DFB2A572A8A17AC000910B7 /* SideSwipe.app */;
 			productType = "com.apple.product-type.application";
@@ -236,6 +244,9 @@
 				Base,
 			);
 			mainGroup = 8DFB2A4E2A8A17AC000910B7;
+			packageReferences = (
+				8DEF78042A8B59F30064C653 /* XCRemoteSwiftPackageReference "swiftui-webview" */,
+			);
 			productRefGroup = 8DFB2A582A8A17AC000910B7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -281,6 +292,7 @@
 				8DFB2A5D2A8A17AC000910B7 /* ContentView.swift in Sources */,
 				8DEF78012A8A253A0064C653 /* BookMarks.swift in Sources */,
 				8DFB2A5B2A8A17AC000910B7 /* SideSwipeApp.swift in Sources */,
+				8DEF78032A8AD7CE0064C653 /* BrowserView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,6 +644,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8DEF78042A8B59F30064C653 /* XCRemoteSwiftPackageReference "swiftui-webview" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kylehickinson/swiftui-webview.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8DEF78052A8B59F30064C653 /* WebView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8DEF78042A8B59F30064C653 /* XCRemoteSwiftPackageReference "swiftui-webview" */;
+			productName = WebView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8DFB2A4F2A8A17AC000910B7 /* Project object */;
 }

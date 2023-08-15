@@ -10,8 +10,14 @@ import SwiftUI
 struct tab: Identifiable{
     var name: String
     var url: URL
+    var ind: Int
     var id = UUID()
 }
+
+var opentabs: [tab] = [
+    tab(name: "Google", url: URL(string: "https://www.google.com")!, ind: 0),
+    tab(name: "Twitter", url: URL(string: "https://www.twitter.com.com")!, ind: 1)
+]
 
 struct ContentView: View {
     @State private var searchText = ""
@@ -34,9 +40,9 @@ struct ContentView: View {
                     Text("Browser")
                 }
                 Section{
-                    TabItem()
-                    TabItem()
-                    TabItem()
+                    ForEach(opentabs) { tab in
+                        TabItem(current: tab)
+                    }
                 } header: {
                     Text("Tabs")
                 }
@@ -71,15 +77,17 @@ struct ContentView: View {
 }
 
 struct TabItem: View {
+    let current: tab
     var body: some View {
         NavigationLink {
-            
+            BrowserView(current: current)
         } label: {
-            Label("Google", systemImage: "globe")
+            Label(current.name, systemImage: "globe")
         }
         .swipeActions {
             Button("Archive") {
-                print("Awesome!")
+                var lent = current.ind
+                print(current.ind)
             }
             .tint(.yellow)
         }
