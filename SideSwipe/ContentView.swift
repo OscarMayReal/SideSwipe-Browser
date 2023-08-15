@@ -22,6 +22,7 @@ var opentabs: [tab] = [
 struct ContentView: View {
     @State private var searchText = ""
     @State private var showingPopover = false
+    @ObservedObject var reloadViewHelper = ReloadViewHelper()
     var body: some View {
         NavigationView{
             List {
@@ -40,8 +41,21 @@ struct ContentView: View {
                     Text("Browser")
                 }
                 Section{
-                    ForEach(opentabs) { tab in
-                        TabItem(current: tab)
+                    ForEach(opentabs) { current in
+                        NavigationLink {
+                            BrowserView(current: current)
+                        } label: {
+                            Label(current.name, systemImage: "globe")
+                        }
+                        .swipeActions {
+                            Button("Archive") {
+                                var lent = opentabs.firstIndex(where: { current.name == $0.name })
+                                print(current.ind)
+                                opentabs.remove(at: lent!)
+                                reloadViewHelper.reloadView()
+                            }
+                            .tint(.yellow)
+                        }
                     }
                 } header: {
                     Text("Tabs")
@@ -76,26 +90,14 @@ struct ContentView: View {
     }
 }
 
-struct TabItem: View {
-    let current: tab
-    var body: some View {
-        NavigationLink {
-            BrowserView(current: current)
-        } label: {
-            Label(current.name, systemImage: "globe")
-        }
-        .swipeActions {
-            Button("Archive") {
-                var lent = current.ind
-                print(current.ind)
-            }
-            .tint(.yellow)
-        }
-    }
-}
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+class ReloadViewHelper: ObservableObject {
+    func reloadView() {
+        objectWillChange.send()
     }
 }
