@@ -10,13 +10,12 @@ import SwiftUI
 struct tab: Identifiable{
     var name: String
     var url: URL
-    var ind: Int
     var id = UUID()
 }
 
 var opentabs: [tab] = [
-    tab(name: "Google", url: URL(string: "https://www.google.com")!, ind: 0),
-    tab(name: "Twitter", url: URL(string: "https://www.twitter.com.com")!, ind: 1)
+    tab(name: "Google", url: URL(string: "https://www.google.com")!),
+    tab(name: "Twitter", url: URL(string: "https://www.twitter.com.com")!)
 ]
 
 struct ContentView: View {
@@ -37,6 +36,11 @@ struct ContentView: View {
                     } label: {
                         Label("history", systemImage: "clock")
                     }
+                    NavigationLink {
+                        
+                    } label: {
+                        Label("Archive", systemImage: "archivebox")
+                    }
                 } header: {
                     Text("Browser")
                 }
@@ -50,7 +54,6 @@ struct ContentView: View {
                         .swipeActions {
                             Button("Archive") {
                                 var lent = opentabs.firstIndex(where: { current.name == $0.name })
-                                print(current.ind)
                                 opentabs.remove(at: lent!)
                                 reloadViewHelper.reloadView()
                             }
@@ -61,8 +64,19 @@ struct ContentView: View {
                     Text("Tabs")
                 }
             }
+            .toolbar {
+                ToolbarItem {
+                    Button {
+                        var newtab = tab(name: "New Tab", url: URL(string: "https://www.google.com")!)
+                        opentabs.append(newtab)
+                        reloadViewHelper.reloadView()
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+                }
+            }
             .navigationTitle("SideSwipe")
-            .searchable(text: $searchText, prompt: "Search The Web")
+            .searchable(text: $searchText, placement: .sidebar, prompt: "Search The Web")
             .refreshable {
                 showingPopover = true
             }

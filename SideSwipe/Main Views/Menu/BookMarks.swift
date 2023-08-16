@@ -13,19 +13,13 @@ struct BookmarksView: View {
         .navigationTitle("Bookmarks")
         .searchable(text: $searchText, prompt: "Search Bookmarks")
         .toolbar {
-                        ToolbarItem {
-                            Button {
-                            } label: {
-                                Text("Edit")
-                            }
-                        }
-                        ToolbarItem {
-                            Button {
-                            } label: {
-                                Image(systemName: "plus")
-                            }
-                        }
-                    }
+            ToolbarItem {
+                Button {
+                } label: {
+                    Text("Edit")
+                }
+            }
+        }
     }
 }
 

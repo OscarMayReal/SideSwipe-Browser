@@ -14,14 +14,13 @@ struct BrowserView: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
             .navigationTitle(current.name)
-            .navigationBarTitleDisplayMode(.inline)
             .searchable(text: $searchText, prompt: "Enter a URL")
     }
 }
 
 struct BrowserView_Previews: PreviewProvider {
     static var previews: some View {
-        BrowserView(current: tab(name: "String", url: URL(string: "https://www.google.com")!, ind: 0))
+        BrowserView(current: tab(name: "String", url: URL(string: "https://www.google.com")!))
     }
 }
 
