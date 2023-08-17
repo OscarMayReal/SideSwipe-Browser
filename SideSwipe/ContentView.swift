@@ -53,7 +53,7 @@ struct ContentView: View {
                         }
                         .swipeActions {
                             Button("Archive") {
-                                var lent = opentabs.firstIndex(where: { current.name == $0.name })
+                                var lent = opentabs.firstIndex(where: { current.id == $0.id })
                                 opentabs.remove(at: lent!)
                                 reloadViewHelper.reloadView()
                             }
